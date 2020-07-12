@@ -12,8 +12,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">庭球大学</a>
-                <header-component></header-component>
+                <a class="navbar-brand" href="{{ url('/admin/home') }}">庭球大学</a>
+                <admin-header></admin-header>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
@@ -47,7 +47,6 @@
 
         <main class="py-4">
             <router-view></router-view>
-            @yield('content')
         </main>
     </div>
 </body>

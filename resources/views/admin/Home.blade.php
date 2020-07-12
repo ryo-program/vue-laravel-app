@@ -1,5 +1,5 @@
 @extends('layouts.admin.app')
 
 @section('content')
-  <p>こんにちは</p>
+  <home-component></home-component>
 @endsection

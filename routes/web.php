@@ -6,10 +6,16 @@ Route::get('/', function() {
     return view('user.welcome');
 })->where('any', '.*');
 
-Auth::routes();
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
-Route::middleware('auth.admin')->group(function() {
-    
+    Auth::routes([
+        'register' => true,
+        'reset' => false,
+        'verify' => false,
+    ]);
+
+    Route::middleware('auth:admin')->group(function() {
+        Route::get('home', 'AdminHomeController@index')->name('top');
+    });
+
 });
-
-// Route::get('/home', 'HomeController@index')->name('home');

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>vue-laravel</title>
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -47,7 +46,9 @@
 
         <main class="py-4">
             <router-view></router-view>
+            @yield('content')
         </main>
     </div>
+    <script src="{{ mix('js/app.js') }}" defer></script>
 </body>
 </html>

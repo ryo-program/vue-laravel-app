@@ -9,14 +9,8 @@ class RouteServiceProvider extends ServiceProvider
 {
     protected $namespace = 'App\Http\Controllers';
 
-    // public const HOME = '/home';
     public const ADMIN_HOME = '/admin/home';
 
-    /**
-     * Define your route model bindings, pattern filters, etc.
-     *
-     * @return void
-     */
     public function boot()
     {
         //
@@ -24,11 +18,6 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
     }
 
-    /**
-     * Define the routes for the application.
-     *
-     * @return void
-     */
     public function map()
     {
         $this->mapApiRoutes();

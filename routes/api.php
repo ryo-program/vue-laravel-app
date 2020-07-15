@@ -14,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('a/posts', function (Request $request) {
+// });
+// Route::namespace('Admin')->prefix('admin')->group(function () {
+//     Route::middleware('auth:admin')->group(function() {
+//       Route::post('/posts/create', 'Admin\PostsController@store');
+//       Route::get('/posts',  'Admin\PostsController@index');
+//     });
+// });
+// Route::group(['middleware' => 'api'], function() {
+//   Route::get('posts', function() {
+//     $posts = Post::all()->take(10);
+//     return $posts;
+//   });
+// });

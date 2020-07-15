@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 Route::get('/', function() {
     return view('user.welcome');
@@ -17,5 +18,9 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::middleware('auth:admin')->group(function() {
         Route::get('home', 'AdminHomeController@index')->name('top');
     });
+    
+});
 
+Route::get('posts', function() {
+    return Post::all();
 });

@@ -1,5 +1,6 @@
 <template>
   <div>
+    
     <router-link :to="{name: 'user.posts'}">
       <button>掲示板</button>
     </router-link>

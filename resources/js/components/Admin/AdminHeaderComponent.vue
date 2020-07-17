@@ -1,5 +1,8 @@
 <template>
   <div>
+    <router-link :to="{name: 'admin.home'}">
+      <button>庭球大学</button>
+    </router-link>
     <router-link :to="{name: 'admin.posts'}">
       <button>掲示板</button>
     </router-link>

@@ -3,10 +3,11 @@ import PostsComponent from './components/PostsComponent';
 import HeaderComponent from './components/HeaderComponent';
 import HomeComponent from './components/HomeComponent';
 import AdminHeaderComponent from './components/Admin/AdminHeaderComponent';
-import AdminPostsComponent from './components/Admin/AdminPostsComponent';
 import AdminQAComponent from './components/Admin/AdminQAComponent';
 import AdminMembersComponent from './components/Admin/AdminMembersComponent';
-import AdminPostsCreate from './components/Admin/AdminPostsCreate';
+import AdminPostsComponent from './components/Admin/posts/AdminPostsComponent';
+import AdminPostsCreate from './components/Admin/posts/AdminPostsCreate';
+import AdminPostsComment from './components/Admin/posts/AdminPostsComment';
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -24,7 +25,7 @@ const routes = [
     },
 
     {
-        path: '/admin/home',
+        path: '/',
         name: 'admin.home',
         component: HomeComponent,
     },
@@ -36,9 +37,15 @@ const routes = [
     },
 
     {
-        path: '/admin/posts/create',
+        path: '/posts/create',
         name: 'posts.create',
         component: AdminPostsCreate,
+    },
+
+    {
+        path: '/admin/comments',
+        name: 'admin.comments',
+        component: AdminPostsComment,
     },
 
     {
@@ -48,7 +55,7 @@ const routes = [
     },
 
     {
-        path: '/admin/members',
+        path: '/members',
         name: 'admin.members',
         component: AdminMembersComponent,   
     },
@@ -59,5 +66,5 @@ const routes = [
 Vue.component('header-component', HeaderComponent);
 Vue.component('admin-header', AdminHeaderComponent);
 
-const router = new VueRouter({ mode: 'history', routes: routes});
+const router = new VueRouter({routes: routes});
 const app = new Vue(Vue.util.extend({ router })).$mount('#app');

@@ -1,0 +1,41 @@
+body {
+  font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.fz-xs {
+  font-size: 10px;
+}
+
+.fz-s {
+  font-size: 13px;
+}
+
+.fz-m {
+  font-size: 16px;
+}
+
+.fz-l {
+  font-size: 20px;
+}
+
+.caution {
+  color: #f04444;
+}
+
+.section-title {
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  color: #fff;
+  background-color: #7eec5c;
+  border-radius: 0;
+}
+
+.btn:hover {
+  color: #fff;
+  opacity: 0.7;
+}
+/*# sourceMappingURL=style.css.map */

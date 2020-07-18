@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h1>投稿の新規作成</h1>
-    <form @submit.prevent="addPost">
-      <section>
+    <div class="container">
+      <h1 class="section-title">投稿の新規作成</h1>
+      <form @submit.prevent="addPost" class="post-create">
         <p>タイトル</p>
         <input type="text" v-model="post.title">
         <p>詳細</p>
         <textarea id="" v-model="post.body"></textarea>
-      </section>
-      <input @click="addPost" value="送信">
-    </form>
+        <input class="btn" type="submit" value="送信">
+      </form>
+    </div>
   </div>
 </template>
 
@@ -22,19 +22,23 @@ export default {
   },
   methods: {
     addPost() {
-      console.log(this.post);
-      // const uri = '/api/admin/posts/create';
-      // this.axios.post(uri, this.task).then((response) => {
-      //   this.$router.push({name: 'posts'});
-      // });
+      axios.post('/api/posts', this.post)
+        .then((res) => {
+          this.$router.push({name: 'admin.posts'});
+        });
     }
   }
-  // mounted() {
-  //   axios.get('/admin/posts').then(response => console.log(response))
-  // }
 }
 </script>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
+.post-create {
+  margin: 0 auto;
+  border: 2px solid #eee;
+  padding: 10px 15px;
+  width: 80%;
+}
+input, textarea {
+  width: 100%;
+}
 </style>

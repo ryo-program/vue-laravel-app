@@ -21,6 +21,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     
 });
 
-Route::get('posts', function() {
-    return Post::all();
-});
+// Route::get('posts', function() {
+//     return Post::all();
+// });

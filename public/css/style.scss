@@ -1,6 +1,9 @@
 body {
   font-family: 'Sawarabi Mincho', sans-serif;
 }
+p {
+  margin: 0;
+}
 .fz-xs {
   font-size: 10px;
 }
@@ -20,10 +23,15 @@ body {
   letter-spacing: 2px;
   text-align: center;
 }
+.container {
+  max-width: 1070px;
+  width: 80%;
+  margin: 0 auto;
+}
 .btn {
   border: none;
   color: #fff;
-  background-color: rgb(126, 236, 92);
+  background-color: rgb(63, 133, 42);
   border-radius: 0;
   &:hover {
     color: #fff;

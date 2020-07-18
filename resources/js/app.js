@@ -7,6 +7,7 @@ import AdminQAComponent from './components/Admin/AdminQAComponent';
 import AdminMembersComponent from './components/Admin/AdminMembersComponent';
 import AdminPostsComponent from './components/Admin/posts/AdminPostsComponent';
 import AdminPostsCreate from './components/Admin/posts/AdminPostsCreate';
+import AdminPostsShow from './components/Admin/posts/AdminPostsShow';
 import AdminPostsComment from './components/Admin/posts/AdminPostsComment';
 require('./bootstrap');
 
@@ -37,8 +38,15 @@ const routes = [
     },
 
     {
-        path: '/posts/create',
-        name: 'posts.create',
+        path: '/admin/post/:postId',
+        name: 'admin.post.show',
+        component: AdminPostsShow,
+        props: true,
+    },
+
+    {
+        path: '/admin/post/create',
+        name: 'admin.post.create',
         component: AdminPostsCreate,
     },
 

@@ -2,6 +2,10 @@ body {
   font-family: 'Sawarabi Mincho', sans-serif;
 }
 
+p {
+  margin: 0;
+}
+
 .fz-xs {
   font-size: 10px;
 }
@@ -27,10 +31,16 @@ body {
   text-align: center;
 }
 
+.container {
+  max-width: 1070px;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .btn {
   border: none;
   color: #fff;
-  background-color: #7eec5c;
+  background-color: #3f852a;
   border-radius: 0;
 }
 

@@ -28,3 +28,6 @@ use Illuminate\Support\Facades\Route;
 //     return $posts;
 //   });
 // });
+Route::get('/posts', 'Admin\PostsController@index');
+Route::get('/posts/{post}', 'Admin\PostsController@show');
+Route::post('/posts', 'Admin\PostsController@store');

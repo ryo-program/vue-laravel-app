@@ -22,4 +22,12 @@ class PostsController extends Controller
     {
         return Post::create($request->all());
     }
+
+    public function destroy(Post $post)
+    {
+        \DB::transaction(function() use ($post) {
+            $post->comments()->delete();
+            $post->delete();
+        });
+    }
 }

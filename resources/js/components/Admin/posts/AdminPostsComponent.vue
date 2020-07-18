@@ -27,6 +27,9 @@ export default {
       posts: [],
     }
   },
+  methods: {
+    
+  },
   mounted() {
     axios.get('/api/posts')
       .then(response => {this.posts = response.data});

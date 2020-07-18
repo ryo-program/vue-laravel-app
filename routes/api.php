@@ -13,21 +13,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-// Route::middleware('auth:api')->get('a/posts', function (Request $request) {
-// });
-// Route::namespace('Admin')->prefix('admin')->group(function () {
-//     Route::middleware('auth:admin')->group(function() {
-//       Route::post('/posts/create', 'Admin\PostsController@store');
-//       Route::get('/posts',  'Admin\PostsController@index');
-//     });
-// });
-// Route::group(['middleware' => 'api'], function() {
-//   Route::get('posts', function() {
-//     $posts = Post::all()->take(10);
-//     return $posts;
-//   });
-// });
 Route::get('/posts', 'Admin\PostsController@index');
 Route::get('/posts/{post}', 'Admin\PostsController@show');
 Route::post('/posts', 'Admin\PostsController@store');
+Route::delete('/posts/{post}', 'Admin\PostsController@destroy');

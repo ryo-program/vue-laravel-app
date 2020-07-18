@@ -17,10 +17,5 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
     Route::middleware('auth:admin')->group(function() {
         Route::get('home', 'AdminHomeController@index')->name('top');
-    });
-    
+    }); 
 });
-
-// Route::get('posts', function() {
-//     return Post::all();
-// });

@@ -19,7 +19,7 @@ p {
 }
 
 .fz-l {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .caution {
@@ -47,5 +47,9 @@ p {
 .btn:hover {
   color: #fff;
   opacity: 0.7;
+}
+
+.delete-btn {
+  background-color: #da4949;
 }
 /*# sourceMappingURL=style.css.map */

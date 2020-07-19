@@ -5,6 +5,9 @@
       <div class="post">
         <p class="fz-l">{{ post.title }}</p>
         <p>{{ post.body }}</p>
+        <router-link :to="{name: 'admin.post.edit'}">
+          <button class="btn">編集</button>
+        </router-link>
         <button @click="deletePost()" class="btn delete-btn">削除</button>
       </div>
     </div>
@@ -46,5 +49,11 @@ export default {
 .post {
   border: 2px solid #eee;
   padding: 10px 15px;
+  position: relative;
+}
+.delete-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
 }
 </style>

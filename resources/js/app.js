@@ -9,6 +9,7 @@ import AdminPostsComponent from './components/Admin/posts/AdminPostsComponent';
 import AdminPostsCreate from './components/Admin/posts/AdminPostsCreate';
 import AdminPostsShow from './components/Admin/posts/AdminPostsShow';
 import AdminPostsComment from './components/Admin/posts/AdminPostsComment';
+import AdminPostsEdit from './components/Admin/posts/AdminPostsEdit';
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -45,6 +46,12 @@ const router = new VueRouter({
             path: '/admin/post/create',
             name: 'admin.post.create',
             component: AdminPostsCreate,
+        },
+
+        {
+            path: '/admin/post/edit',
+            name: 'admin.post.edit',
+            component: AdminPostsEdit,
         },
     
         {

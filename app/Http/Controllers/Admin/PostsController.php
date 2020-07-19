@@ -10,11 +10,13 @@ class PostsController extends Controller
 {
     public function index()
     {
-        return Post::all();
+        return Post::orderBy('created_at', 'desc')->get();
     }
 
-    public function show(Post $post)
+    public function show($post_id)
     {
+        $post = Post::findOrFail($post_id);
+        
         return $post;
     }
 

@@ -14,7 +14,7 @@
 <script>
 export default {
   props: {
-    postId: Number
+    postId: String
   },
   data() {
     return {
@@ -25,6 +25,7 @@ export default {
     getPost() {
       axios.get('/api/posts/' + this.postId)
         .then((res) => {
+          console.log(res);
           this.post = res.data;
         });
     },

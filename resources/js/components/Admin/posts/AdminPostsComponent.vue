@@ -8,12 +8,13 @@
         <button class="btn new-post">新規作成</button>
       </router-link>
       <div class="posts">
-        <div class="post-item" v-for="post in reverseItems" :key="post.id">
+        <div class="post-item" v-for="post in posts" :key="post.id">
           <p class="fz-l">{{ post.title }}</p>
           <p>{{ post.body }}</p>
           <router-link :to="{name: 'admin.post.show', params: {postId: post.id}}">
             <button class="btn">詳細</button>
           </router-link>
+          <!-- <p>（{{ time(post.created_at) }}）</p> -->
         </div>
       </div>
     </div>
@@ -28,16 +29,17 @@ export default {
     }
   },
   methods: {
-    
+    time(e) {
+      let year = e.getFullYear();
+      let month = e.getMonth() + 1;
+      let date = e.getDate();
+      let time =  year + "/" + month + "/" + date;
+      return time;
+    }
   },
   mounted() {
     axios.get('/api/posts')
-      .then(response => {this.posts = response.data});
-  },
-  computed: {
-    reverseItems() {
-      return this.posts.slice().reverse();
-    }
+      .then(res => {this.posts = res.data});
   },
 }
 </script>
@@ -61,6 +63,4 @@ export default {
     top: 5px;
   }
 }
-
-
 </style>
